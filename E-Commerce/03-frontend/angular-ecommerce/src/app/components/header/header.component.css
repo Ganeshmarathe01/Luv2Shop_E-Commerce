@@ -1,0 +1,13 @@
+.section-content{
+    position:relative;
+    margin:0 auto;
+    z-index:1
+}
+
+section{
+    position:relative
+}
+
+.section-content-p30{
+    padding:0 30px
+}
