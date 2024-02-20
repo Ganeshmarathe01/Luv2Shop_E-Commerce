@@ -1,0 +1,32 @@
+pipeline{
+    agent any
+    stages {
+        stage("Clean Up"){
+            steps{
+                deleteDir()
+            }
+        }
+        
+        stage("Clone Repo"){
+            steps{
+                sh "git clone git@github.com:Ganeshmarathe01/Luv2Shop_E-Commerce.git"
+            }
+        }
+        
+        stage("Build"){
+            steps{
+                dir("Luv2Shop_E-Commerce"){
+                    sh "mvn clean install"
+                }
+            }
+        }
+        
+        stage("Test"){
+            steps{
+                dir("Luv2Shop_E-Commerce"){
+                    sh "mvn test"
+                }
+            }
+        }
+    }
+}
